@@ -15,13 +15,12 @@
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    align-items: flex-start;
-    min-min-min-height: 100vh;
+    align-items: center;   /* FIXED: center everything */
+    min-height: 100vh;     /* FIXED: corrected min-height */
     background: linear-gradient(135deg, #ffe6f2 0%, #fff5fc 50%, #ffeef7 100%);
     position: relative;
     overflow-x: hidden;
     font-family: 'Poppins', sans-serif;
-    
 }
 
 /* Title */
@@ -29,6 +28,7 @@
     font-size: 28px;
     color: #ff4f8b;
     margin-bottom: 30px;
+    text-align: center;
 }
 
 /* Carousel Container */
@@ -54,8 +54,8 @@
     flex-shrink: 0;
     height: 300px;
     display: flex;
-    align-items: flex-start;
-    justify-content: center;
+    align-items: center;       /* Center content inside slides */
+    justify-content: center;   /* FIXED: Now text will be centered */
     background: #ffe6f2;
     color: #ff4f8b;
     font-size: 24px;
@@ -90,7 +90,7 @@
 
 /* Continue Button */
 .continue-btn {
-    display: inline-block;
+    display: block; /* FIXED: ensures button centers under carousel */
     margin: 15px auto;
     padding: 14px 22px;
     background: #ff4f8b;
@@ -116,6 +116,8 @@
     .continue-btn { font-size: 16px; padding: 12px 20px; }
     .carousel { max-width: 90%; }
 }
+</style>
+
 </style>
 </head>
 
