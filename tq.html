@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Thank You</title>
+
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        background: linear-gradient(135deg, #e2c8d5, #eeebec);
+        font-family: "Poppins", sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        min-min-height: 100vh;
+        text-align: center;
+        color: #ffffff;
+    }
+
+    .thankyou-box {
+        background: rgba(7, 203, 218, 0.15);
+        padding: 30px;
+        width: 90%;
+        max-width: 400px;
+        border-radius: 18px;
+        backdrop-filter: blur(10px);
+        box-shadow: 0 8px 30px rgba(0,0,0,0.2);
+        animation: fadeIn 1.2s ease;
+    }
+
+    h1 {
+        font-size: 2rem;
+        margin-bottom: 10px;
+        font-weight: 600;
+    }
+
+    p {
+        font-size: 1.1rem;
+        margin-bottom: 25px;
+    }
+
+    .restart-btn {
+        background: #ffffff;
+        color: #8fdbdb;
+        padding: 12px 25px;
+        border-radius: 30px;
+        border: none;
+        cursor: pointer;
+        font-size: 1rem;
+        font-weight: 600;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+        transition: 0.3s;
+    }
+
+    .restart-btn:hover {
+        transform: scale(1.08);
+        background: #ffe7f2;
+    }
+
+    @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(20px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+</style>
+
+</head>
+<body>
+
+<div class="thankyou-box">
+    <h1>💖 Thank You! 💖</h1>
+    <p>Thank you for everything.  
+       You make every moment special.</p>
+
+    <button class="restart-btn" onclick="restart()">Restart</button>
+</div>
+
+<script>
+    function restart() {
+        window.location.href = "index.html";  
+        // Change the filename based on your first page
+    }
+</script>
+
+</body>
+</html>

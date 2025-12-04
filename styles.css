@@ -1,0 +1,249 @@
+/* Full-page center (layout-fixed, preserves original design) */
+.page {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* start from top for mobile */
+    min-height: 100vh;       /* use min-height instead of height */
+    background: linear-gradient(#ffe3ef, #ffd4ec);
+    padding: 30px 20px;
+    overflow-x: hidden;
+    box-sizing: border-box;
+}
+
+/* Main card */
+.card {
+    width: 90%;
+    max-width: 420px;
+    background: #ffffff;
+    text-align: center;
+    padding: 30px 25px;
+    border-radius: 25px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+    margin-top: 12px;
+    box-sizing: border-box;
+}
+
+/* Title */
+.title {
+    font-size: 26px;
+    color: #ff4f8b;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+/* Pink letter card */
+.letter-card {
+    display: none;
+    background: #fff7fb;
+    border: 2px solid #ff9fc2;
+    border-radius: 20px;
+    padding: 20px;
+    text-align: left;
+    margin-top: 20px;
+    font-size: 17px;
+    line-height: 1.6;
+    animation: fadeIn 0.8s ease forwards;
+    box-sizing: border-box;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* CLOUDS */
+.cloud {
+    position: absolute;
+    width: 80px;
+    opacity: 0.55;
+    animation: floatClouds 6s infinite ease-in-out;
+    z-index: 0;
+}
+
+.cloud1 { top: 80px; left: 65%; animation-delay: 0s; }
+.cloud2 { top: 150px; left: 10%; animation-delay: 1s; }
+.cloud3 { top: 260px; left: 75%; animation-delay: 2s; }
+
+@keyframes floatClouds {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-12px); }
+    100% { transform: translateY(0); }
+}
+
+/* STAR */
+.star {
+    position: absolute;
+    top: 70px;
+    left: 30px;
+    font-size: 38px;
+    z-index: 0;
+}
+
+/* CENTRAL CONTAINER */
+.container {
+    width: 92%;
+    max-width: 420px;
+    margin: 0 auto;
+    text-align: center;
+    z-index: 5;
+    box-sizing: border-box;
+    padding-top: 6px;
+}
+
+/* HEADINGS */
+.main-title {
+    font-size: 26px;
+    color: #ff4f8b;
+    font-weight: 600;
+}
+
+.subtitle {
+    margin-top: -4px;
+    font-size: 14px;
+    color: #7d7d7d;
+}
+
+/* ENVELOPE */
+#envelopeSection {
+    margin-top: 18px;
+    display:flex;
+    justify-content:center;
+    box-sizing: border-box;
+}
+
+.envelope {
+    width: 270px;
+    height: 190px;
+    margin: auto;
+    position: relative;
+    cursor: pointer;
+    box-sizing: border-box;
+}
+
+.top-flap {
+    position: absolute;
+    width: 100%;
+    height: 100px;
+    background: #ffb8d9;
+    clip-path: polygon(0 0, 100% 0, 50% 100%);
+    transition: 0.7s;
+}
+
+.bottom-flap {
+    position: absolute;
+    top: 60px;
+    width: 100%;
+    height: 120px;
+    background: #ffddea;
+    border-radius: 10px;
+    border: 2px solid #ff8cb7;
+}
+
+.envelope.open .top-flap {
+    transform: rotateX(180deg);
+    transform-origin: top;
+}
+
+/* LETTER CARD (preserve design) */
+.letter-card {
+    display: none;
+    margin-top: 18px;
+    background: #fffdfd;
+    border-radius: 20px;
+    padding: 22px;
+    border: 2px solid #ffe4f0;
+    box-shadow: 0 8px 25px rgba(255, 110, 150, 0.25);
+    animation: fadeIn 0.8s ease;
+    position: relative;
+    box-sizing: border-box;
+}
+
+.letter-header {
+    font-size: 16px;
+    font-weight: 600;
+    color: #d33f82;
+    text-align: left;
+    padding-bottom: 6px;
+    border-bottom: 1px solid #ffd1e9;
+}
+
+.letter-text {
+    font-family: 'Dancing Script', cursive;
+    font-size: 20px;
+    line-height: 1.55;
+    margin-top: 12px;
+    text-align: left;
+    color: #444;
+    transition: 0.4s;
+    box-sizing: border-box;
+}
+
+/* Stamp */
+.stamp {
+    position: absolute;
+    bottom: 12px;
+    left: 12px;
+    width: 52px;
+    height: 52px;
+    font-size: 12px;
+    border-radius: 50%;
+    background: #ffe7f1;
+    border: 2px dotted #ff75ad;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #ff4f8b;
+    font-weight: 600;
+    box-sizing: border-box;
+}
+
+/* Signature */
+.signature {
+    text-align: right;
+    font-size: 18px;
+    color: #ff4f8b;
+    margin-top: 18px;
+    font-family: 'Dancing Script', cursive;
+}
+
+/* Continue button */
+.continue-btn {
+    display: block;
+    margin: 22px auto 4px;
+    padding: 14px 22px;
+    background: #ff4f8b;
+    border: none;
+    color: white;
+    font-size: 18px;
+    border-radius: 30px;
+    box-shadow: 0 5px 15px rgba(255, 90, 140, 0.35);
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+/* Cake page small adjustments */
+.cake-emoji { font-size: 90px; margin: 22px 0; }
+
+/* Carousel tweaks */
+.carousel { max-width: 460px; margin-top: 18px; }
+.carousel-track { transition: transform .36s ease; }
+.slide { height: 300px; }
+
+/* Polaroid images full width */
+.polaroid img { width: 100%; height: auto; display:block; border-radius:6px; }
+
+/* Dots */
+.dots { margin-top: 12px; display:flex; justify-content:center; gap:8px; }
+
+/* Final/thankyou box */
+.thanks-box { margin-top: 18px; padding:18px; border-radius:14px; box-sizing: border-box; }
+
+/* Responsive */
+@media (max-width:420px){
+  .container { padding-top: 12px; width:94%; }
+  .envelope { width:92%; height:160px; }
+  .letter-text { font-size:18px; }
+  .cake-emoji { font-size:70px; }
+  .slide { height:220px; }
+}

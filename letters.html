@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Birthday Letter</title>
+
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Dancing+Script:wght@500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="page">
+
+<!-- Yellow Star -->
+<div class="star">⭐</div>
+
+<div class="container">
+
+    <!-- Header -->
+    <h1 class="main-title">A Birthday Love Letter 💌</h1>
+    <p class="subtitle">From my heart to the birthday queen</p>
+
+    <!-- Envelope First Screen -->
+    <div id="envelopeSection">
+        <div id="envelopeBox" class="envelope" onclick="openEnvelope()">
+            <div class="top-flap"></div>
+            <div class="bottom-flap"></div>
+        </div>
+    </div>
+
+    <!-- LETTER CARD -->
+    <div id="letterCard" class="letter-card">
+        <div class="letter-header">✨ To My Birthday Princess</div>
+        <div id="letterText" class="letter-text"></div>
+        <div class="stamp">💗<br>LOVE SEAL</div>
+        <div class="signature">Forever yours 💕</div>
+    </div>
+
+    <button id="continueBtn" class="continue-btn">Continue ✨</button>
+
+</div>
+
+<script>
+let letters = [
+`My dearest anuradha,<br><br>
+Today marks another year of your incredible existence, and I couldn't be more grateful to celebrate it with you. You bring so much joy, laughter, and love into this world – and into my life. You deserve all the magic, all the dreams, and all the love this world has to offer.`,
+
+`You have been with me in my happiest moments and also in my hardest days. You stood beside me when I felt weak, and you always lifted me up. Your support means more to me than words can ever explain.`,
+
+`Thank you for staying with me through every high and low. You listened to me, guided me, and never left my side. I feel safe with you, and I know I can always trust you.`,
+
+`You bring comfort, laughter, and peace into my life. I admire your heart, your strength, and your kindness. You truly are a blessing, and I wish you all the happiness in this world.`
+];
+
+let current = 0;
+
+function openEnvelope() {
+    document.getElementById("envelopeBox").classList.add("open");
+    setTimeout(() => {
+        document.getElementById("envelopeSection").style.display = "none";
+        showLetter();
+    }, 900);
+}
+
+function showLetter() {
+    document.getElementById("letterCard").style.display = "block";
+    document.getElementById("continueBtn").style.display = "block";
+    document.getElementById("letterText").innerHTML = letters[current];
+}
+
+function nextLetter() {
+    current++;
+    if (current >= letters.length) {
+        location.href = "cake.html";
+        return;
+    }
+    document.getElementById("letterText").style.opacity = 0;
+    setTimeout(() => {
+        document.getElementById("letterText").innerHTML = letters[current];
+        document.getElementById("letterText").style.opacity = 1;
+    }, 400);
+}
+
+// Make Continue button work for opening envelope first, then next letters
+document.getElementById("continueBtn").addEventListener("click", () => {
+    if (document.getElementById("letterCard").style.display !== "block") {
+        openEnvelope();
+    } else {
+        nextLetter();
+    }
+});
+</script>
+
+</body>
+</html>

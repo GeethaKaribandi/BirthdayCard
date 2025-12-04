@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cake</title>
+
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+/* Page Layout */
+.page {
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-min-min-height: 100vh;
+    background: linear-gradient(135deg, #ffe6f2 0%, #fff5fc 50%, #ffeef7 100%);
+    position: relative;
+    overflow: hidden;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Center content */
+.center {
+    text-align: center;
+    z-index: 5;
+    padding: 20px;
+
+    padding-top: 12px;
+}
+
+/* Cake emoji styling */
+.cake {
+    font-size: 120px;
+    margin: 40px 0;
+    text-shadow: 0 0 10px #ff69b4, 0 0 20px #ff69b4, 0 0 30px #ff85c1, 0 0 40px #ffb6c1;
+    animation: cakeGlow 2s infinite alternate;
+}
+
+@keyframes cakeGlow {
+    0% { text-shadow: 0 0 5px #ff69b4, 0 0 10px #ff69b4, 0 0 15px #ff85c1, 0 0 20px #ffb6c1; }
+    100% { text-shadow: 0 0 15px #ff69b4, 0 0 30px #ff69b4, 0 0 45px #ff85c1, 0 0 60px #ffb6c1; }
+}
+
+/* Continue button styling */
+.continue-btn {
+    display: inline-block;
+    margin: 25px auto;
+    padding: 14px 22px;
+    background: #ff4f8b;
+    border: none;
+    color: white;
+    font-size: 18px;
+    border-radius: 30px;
+    box-shadow: 0 5px 15px rgba(255, 90, 140, 0.35);
+    cursor: pointer;
+    transition: 0.3s;
+    text-align: center;
+}
+
+.continue-btn:hover {
+    transform: scale(1.07);
+    box-shadow: 0 0 20px #ff69b4, 0 0 40px #ff85c1, 0 0 60px #ffb6c1;
+}
+
+/* Floating sparkles */
+.sparkle {
+    position: absolute;
+    border-radius: 50%;
+    opacity: 0.9;
+    animation-name: float;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+    box-shadow: 0 0 6px currentColor, 0 0 12px currentColor;
+}
+
+@keyframes float {
+    0% { transform: translate(0,0) scale(1); opacity:1; }
+    25% { transform: translateX(10px) translateY(-20px) scale(1.2); opacity:0.7; }
+    50% { transform: translateX(-10px) translateY(-40px) scale(1); opacity:0.9; }
+    75% { transform: translateX(15px) translateY(-25px) scale(1.1); opacity:0.8; }
+    100% { transform: translateX(0) translateY(0) scale(1); opacity:1; }
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+    .cake { font-size: 80px; }
+    .continue-btn { font-size: 16px; padding: 12px 20px; }
+}
+</style>
+</head>
+<body class="page">
+
+<div class="center">
+    <h1 class="main-title">Make a Wish 🎂</h1>
+    <div class="cake">🎂</div>
+    <button onclick="location.href='photos.html'" class="continue-btn">Next 📸</button>
+</div>
+
+<script>
+// Colors for sparkles
+const colors = ['#ff69b4', '#ffc0cb', '#ffffff', '#e6ccff', '#ffd700', '#00ffff'];
+const totalSparkles = 25;
+
+for(let i=0; i<totalSparkles; i++){
+    const sparkle = document.createElement('div');
+    sparkle.classList.add('sparkle');
+
+    // Random color
+    const color = colors[Math.floor(Math.random()*colors.length)];
+    sparkle.style.backgroundColor = color;
+    sparkle.style.color = color;
+
+    // Random position
+    sparkle.style.top = Math.random() * window.innerHeight + 'px';
+    sparkle.style.left = Math.random() * window.innerWidth + 'px';
+
+    // Random size
+    const size = 6 + Math.random()*10;
+    sparkle.style.width = size + 'px';
+    sparkle.style.height = size + 'px';
+
+    // Random animation duration
+    sparkle.style.animationDuration = (3 + Math.random()*3) + 's';
+
+    // Random animation delay
+    sparkle.style.animationDelay = Math.random()*3 + 's';
+
+    document.body.appendChild(sparkle);
+}
+</script>
+
+</body>
+</html>

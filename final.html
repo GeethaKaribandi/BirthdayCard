@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Birthday Wishes Cards 🎀</title>
+<style>
+/* PAGE */
+body {
+    margin: 0;
+    background: #fff7fb;
+    font-family: 'Poppins', sans-serif;
+}
+
+.page-container {
+    padding: 20px;
+    text-align: center;
+}
+
+/* HEADERS */
+.heading {
+    color: #ff4f8b;
+    margin-bottom: 4px;
+    font-size: 22px;
+    font-weight: 600;
+}
+
+.subtext {
+    margin-top: -2px;
+    font-size: 13px;
+    color: #777;
+}
+
+/* WRAPPER */
+.cards-wrapper {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+/* FLIP CARD CONTAINER */
+.flip-card {
+    width: 100%;
+    height: 150px;
+    perspective: 1000px;
+    cursor: pointer;
+}
+
+/* INNER FLIP */
+.flip-inner {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+}
+
+/* WHEN CLICKED */
+.flip-card.flipped .flip-inner {
+    transform: rotateY(180deg);
+}
+
+/* BOTH SIDES */
+.flip-front,
+.flip-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    background: #fff;
+    border-radius: 14px;
+    padding: 18px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    color: #555;
+    font-size: 15px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+}
+
+/* BACK SIDE */
+.flip-back {
+    transform: rotateY(180deg);
+    font-size: 14px;
+    padding: 20px;
+    line-height: 1.45;
+}
+
+/* Small text */
+.tap-info {
+    display: block;
+    margin-top: 12px;
+    font-size: 12px;
+    color: #ff4f8b;
+}
+
+/* Bottom message */
+.bottom-line {
+    margin-top: 25px;
+    font-size: 14px;
+    color: #ff4f8b;
+    border-top: 2px solid #ff4f8b;
+    padding-top: 10px;
+}
+
+.continue-btn {
+    display: block; /* was none */
+    margin: 25px auto;
+    padding: 14px 22px;
+    background: #ff4f8b;
+    border: none;
+    color: white;
+    font-size: 18px;
+    border-radius: 30px;
+    box-shadow: 0 5px 15px rgba(255, 90, 140, 0.35);
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.continue-btn:hover {
+    transform: scale(1.07);
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="page-container">
+
+    <h2 class="heading">Birthday Wishes Cards ✨🎀💖</h2>
+    <p class="subtext">Click each card to reveal a birthday message 💕⭐</p>
+
+    <div class="cards-wrapper">
+
+        <!-- CARD 1 -->
+        <div class="flip-card" onclick="flip(this)">
+            <div class="flip-inner">
+                <div class="flip-front">
+                    Tap to reveal ✨💝
+                </div>
+
+                <div class="flip-back">
+                    Happy Birthday to the girl who makes every day feel like a celebration! 🎉💕✨  
+                    <span class="tap-info">Tap to flip back</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- CARD 2 -->
+        <div class="flip-card" onclick="flip(this)">
+            <div class="flip-inner">
+                <div class="flip-front">
+                    Tap to reveal 🌸💫
+                </div>
+
+                <div class="flip-back">
+                    Another year of being absolutely incredible, beautiful, and perfect just the way you are! ✨🌷💖  
+                    <span class="tap-info">Tap to flip back</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- CARD 3 -->
+        <div class="flip-card" onclick="flip(this)">
+            <div class="flip-inner">
+                <div class="flip-front">
+                    Tap to reveal 💕🌟
+                </div>
+
+                <div class="flip-back">
+                    May this new year bring you endless joy, love, and all the dreams your heart desires! ❤️🌟🎀  
+                    <span class="tap-info">Tap to flip back</span>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <p class="bottom-line">Amazing! All birthday wishes revealed! ✨💛🌸</p>
+    <button onclick="location.href='tq.html'" class="continue-btn">Next</button>
+</div>
+
+<script>
+function flip(card) {
+    card.classList.toggle("flipped");
+}
+</script>
+
+</body>
+</html>
